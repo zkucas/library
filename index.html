@@ -4,40 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Handjet:wght@300;500&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    <div class="myform">
-        <button class="button popup-form">Add a Book</button>
-        <form action="#" class="form-box">
-            <h1>Add a Book</h1>
-
-            <label >Author</label>
-            <input type="text" placeholder="Enter Author" name="author" class="auth" required>
-
-            <label >Book Title</label>
-            <input type="text" placeholder="Enter Book Title" name="title" class="title" required>
-
-            <label ">Number of Pages</label>
-            <input type="number" placeholder="Enter Pages" name="pages" class="pages" required>
-            
-            <div class="readStatus">
-                <p>Read Status:</p>
-                <label class="switch">
-                    <input type="checkbox" class="readbox">
-                    <span class="slider"></span>
-                  </label>
+    <div class="wrapper">
+        <div class="title">
+            <h1> The Library </h1>
+            <div>
+                <button class="button popup-form">Add To Library</button>
             </div>
-         
+        </div>
+        <div class="myform">
+           
+            <form action="#" class="form-box">
+                <h1>Add a Book</h1>
 
-            <button class="button add">Add a Book</button>
+                <label >Author</label>
+                <input type="text" placeholder="Enter Author" name="author" class="auth" required>
 
-        </form>
+                <label >Book Title</label>
+                <input type="text" placeholder="Enter Book Title" name="title" class="booktitle" required>
+
+                <label ">Number of Pages</label>
+                <input type="number" placeholder="Enter Pages" name="pages" class="pages" required>
+                
+                <div class="readStatus">
+                    <p>Read Status:</p>
+                    <label class="switch">
+                        <input type="checkbox" class="readbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            
+
+                <button class="button add">Add a Book</button>
+                <button class="button close">Close</button>
+
+            </form>
+        </div>
+        <div class="container">
+        
+        </div>
+        <div class="footer"> <p>&copy; 2023 The Library by ZK</p> </div>
     </div>
-    <div class="container">
-       
-    </div>
-
 </body>
 
 <script src="script.js"></script>

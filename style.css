@@ -1,35 +1,75 @@
-html {
-    height: 100%;
-    margin: 0;
+html,body {
+    height: fit-content;
+    min-height: 100%;
     padding: 0;
+    box-sizing: border-box;
+    background-color: #CADEDF;
 }
 
-body{
-    background-color: black;
-    box-sizing: border-box;
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Handjet', cursive;
+    font-weight: 300;
+    margin: 30px;
+  
 }
+
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .container{
-    color: aliceblue;
+    color: #CADEDF;
     display: grid;
     justify-items: center;
-    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    grid-template-columns: repeat(4,1fr);
     gap:15px;
     width: 100%;
     height: 100%;
 }
 
+.container .mainDiv{
+    background-color: #9CA89E;
+    color: black;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 200px;
+    height: max-content;
+    border-radius: 5px;
+    box-shadow: 5px 5px 2px rgb(95, 95, 95);
+}
+
 .button{
-    width: 100px;
+    min-width: 100px;
     margin-bottom: 10px;
+    border-radius: 1rem;
+    padding: 10px;
+    font: inherit;
+    font-size: 15px;
+    text-align: center;
+    border: none;
+    background-color: #16796F;
 }
 
 .remBtn{
     width: max-content;
     margin-top: 10px;
     margin-bottom: 10px;
-    border-radius: 0.5rem;
-    border: none;
+    background-color: rgb(162, 102, 102);
+    
 }
 
 .switch{
@@ -78,11 +118,11 @@ body{
   }
 
   input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #16796F;
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #16796F;
   }
   
   input:checked + .slider:before {
@@ -92,24 +132,52 @@ body{
   }
 
 
-.container .mainDiv{
-    background-color: brown;
+.myform{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    width: 200px;
-    height: max-content;
+    margin-left: auto;
+    padding-right: 80px;
+    padding-top: 40px;
 }
 
 .form-box{
-    max-width: 300px;
+    max-width: max-content;
+    height: fit-content;
+    position: fixed;
+    top:0;
     padding: 10px;
-    background-color: white;
+    background-color: #7CB7AF;
     display: none;
- 
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap:5px;
+    z-index: 3;
+    opacity: 0.75;
+}
+
+.popup-form{
+   
+  
+}
+
+.userBook{
+    font-weight: 500;
+}
+
+.bookParC{
+    display: flex;
+    gap: 5px;
+}
+
+.auth, .title, .pages {
+    border-radius: 3px;
+    border: none;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
 }

@@ -2,6 +2,7 @@
 let container = document.querySelector(".container")
 let btn = document.querySelector(".add")
 let btn2 = document.querySelector(".popup-form")
+let btn3 = document.querySelector(".close")
 let form = document.querySelector(".form-box")
 
 let myLibrary = [];
@@ -16,9 +17,32 @@ function Book(author, name, pages, read){
 
 function addBookToLibrary(book){
 
+        const newDivAuthorC = document.createElement('div');
+        const newDivTitleC = document.createElement('div');
+        const newDivPagesC = document.createElement('div');
+
         const newDivAuthor = document.createElement('p');
         const newDivTitle = document.createElement('p');
         const newDivPages = document.createElement('p');
+
+        const newDivAuthorUser = document.createElement('p');
+        const newDivTitleUser = document.createElement('p');
+        const newDivPagesUser = document.createElement('p');
+
+        newDivAuthorC.appendChild(newDivAuthor)
+        newDivAuthorC.appendChild(newDivAuthorUser)
+        newDivAuthorUser.classList.add('userBook') 
+        newDivAuthorC.classList.add('bookParC')
+        
+        newDivTitleC.appendChild(newDivTitle)
+        newDivTitleC.appendChild(newDivTitleUser)
+        newDivTitleUser.classList.add('userBook') 
+        newDivTitleC.classList.add('bookParC')
+        
+        newDivPagesC.appendChild(newDivPages)
+        newDivPagesC.appendChild(newDivPagesUser)
+        newDivPagesUser.classList.add('userBook') 
+        newDivPagesC.classList.add('bookParC')
 
 
         const switchDiv = document.createElement('div');
@@ -41,20 +65,24 @@ function addBookToLibrary(book){
         const removeBtn = document.createElement('button')
         removeBtn.type='button';
         removeBtn.textContent = 'Remove';
-        removeBtn.classList.add('remBtn');
+        removeBtn.classList.add('remBtn','button');
 
         const newDiv = document.createElement('div')
         newDiv.classList.add('mainDiv');
 
-        newDivAuthor.textContent = 'Book Author: ' + book.author
-        newDivTitle.textContent = 'Book Title: ' + book.name
-        newDivPages.textContent = 'Book Pages: ' + book.pages
+        newDivAuthor.textContent = 'Book Author:' 
+        newDivTitle.textContent = 'Book Title:'
+        newDivPages.textContent = 'Book Pages:' 
+
+        newDivAuthorUser.textContent =  book.author;
+        newDivTitleUser.textContent =  book.name;
+        newDivPagesUser.textContent =  book.pages;
+
         switchinput.checked = book.read
 
-
-        newDiv.appendChild(newDivAuthor)
-        newDiv.appendChild(newDivTitle)
-        newDiv.appendChild(newDivPages)
+        newDiv.appendChild(newDivAuthorC)
+        newDiv.appendChild(newDivTitleC)
+        newDiv.appendChild(newDivPagesC)
         newDiv.appendChild(switchDiv)
         newDiv.appendChild(removeBtn)
 
@@ -73,7 +101,7 @@ function createForm(event){
     event.preventDefault()
 
     const author = document.querySelector(".auth").value
-    const name = document.querySelector(".title").value
+    const name = document.querySelector(".booktitle").value
     const pages = document.querySelector(".pages").value
     const read = document.querySelector(".readbox").checked
 
@@ -87,16 +115,21 @@ function createForm(event){
 
 function popup(){
     form.style.display = "flex";
+    btn2.style.display = "none";
+}
+
+function popupClose(){
+    form.style.display = "none";
+    btn2.style.display = "flex";
 }
 
 const tempBook = new Book("Tolkien","The Hobbit", 392, true);
 
 addBookToLibrary(tempBook)
 
-/*addBookToLibrary('Tolkien', 'Hobbit', '293')*/
-
 btn2.addEventListener("click", popup)
 
+btn3.addEventListener("click", popupClose)
 
 btn.addEventListener("click", createForm)
 
