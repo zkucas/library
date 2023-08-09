@@ -7,12 +7,13 @@ let form = document.querySelector(".form-box")
 
 let myLibrary = [];
 
-function Book(author, name, pages, read){
+class Book{
+    constructor(author, name, pages, read){
     this.author = author
     this.name = name
     this.pages = pages
     this.read = read
-}
+}}
 
 
 function addBookToLibrary(book){
